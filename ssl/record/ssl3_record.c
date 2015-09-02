@@ -50,7 +50,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * The licence and distribution terms for any publically available version or
+ * The licence and distribution terms for any publicly available version or
  * derivative of this code cannot be changed.  i.e. this code cannot simply be
  * copied and put under another distribution licence
  * [including the GNU Public Licence.]
@@ -385,7 +385,7 @@ int ssl3_get_record(SSL *s)
     enc_err = s->method->ssl3_enc->enc(s, 0);
     /*-
      * enc_err is:
-     *    0: (in non-constant time) if the record is publically invalid.
+     *    0: (in non-constant time) if the record is publicly invalid.
      *    1: if the padding is valid
      *    -1: if the padding is invalid
      */
@@ -566,7 +566,7 @@ int ssl3_do_compress(SSL *ssl)
  * ssl3_enc encrypts/decrypts the record in |s->wrec| / |s->rrec|, respectively.
  *
  * Returns:
- *   0: (in non-constant time) if the record is publically invalid (i.e. too
+ *   0: (in non-constant time) if the record is publicly invalid (i.e. too
  *       short etc).
  *   1: if the record's padding is valid / the encryption was successful.
  *   -1: if the record's padding is invalid or, if sending, an internal error
@@ -640,7 +640,7 @@ int ssl3_enc(SSL *s, int send)
  * tls1_enc encrypts/decrypts the record in |s->wrec| / |s->rrec|, respectively.
  *
  * Returns:
- *   0: (in non-constant time) if the record is publically invalid (i.e. too
+ *   0: (in non-constant time) if the record is publicly invalid (i.e. too
  *       short etc).
  *   1: if the record's padding is valid / the encryption was successful.
  *   -1: if the record's padding/AEAD-authenticator is invalid or, if sending,
@@ -1247,7 +1247,7 @@ int dtls1_process_record(SSL *s)
     enc_err = s->method->ssl3_enc->enc(s, 0);
     /*-
      * enc_err is:
-     *    0: (in non-constant time) if the record is publically invalid.
+     *    0: (in non-constant time) if the record is publicly invalid.
      *    1: if the padding is valid
      *   -1: if the padding is invalid
      */
